@@ -43,6 +43,7 @@ while (window.isOpen()) {
 # Optional fields
 
 There are four other fields that we did not include in the example code above: frequency, starting/ending index, and current index. As is, the code above will update the sprite by one frame every iteration through the game loop. If we wanted the sprite to only update every other frame (and therefore be animated slower) we could add:
+
 `am.setAnimationFrequency("Walking", 2); // Update every other call`
 
 or
@@ -50,23 +51,26 @@ or
 `am.setAnimationFrequency("Walking", 3) // Update every 3rd call`
 
 If we wanted to start the animation halfway through the process, we could also set the index of the animation (either through the constructor or setter below):
+
 `am.setAnimationIndex("Walking", Vector2i(2, 0)) // Start halfway through our 4x4 sheet`
 
 In this same vein, we can also reset the index to start the animation over:
+
 `am.resetAnimationIndex("Walking");`
 
 No need to do this often though, as the animation automatically resets once it reaches the last frame!
 
 If we have a single sprite sheet with more than one animation in it, we can also specify where the animation will start and end. These have there own separate setters, shown below!
+
 `am.setAnimationStartingIndex("Walking", Vector2i(4, 4)); // Maybe we have another animation set in the same file as before, after the other set`
 
 and
 
-`am.setAnimationEndingIndex("Walking", Vector2i(8, 4))``
+`am.setAnimationEndingIndex("Walking", Vector2i(8, 4))`
 
 Finally, we can remove entries from the manager, using the `am.deleteAnimation("Walking")` method. This isn't entirely crucial, as it shouldn't interfere with other animations, though it may improve performance time.
 
-# Full constructor:
+# Full animation add method:
 
 ```
 void addAnimation(string animation, Texture texture, Vector2i sheetSize,
