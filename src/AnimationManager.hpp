@@ -25,6 +25,8 @@ DEPENDENCIES:
 std::string
 std::map
 sf::Sprite
+sf::Texture
+sf::Vector2i/f
 
 */
 
