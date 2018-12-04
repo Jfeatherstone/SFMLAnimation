@@ -99,6 +99,10 @@ void AnimationManager::addAnimation(string animation, Texture texture,
   m_startingIndicies[animation].x = startingIndex.x;
   m_startingIndicies[animation].y = startingIndex.y;
 
+  // Our ending index vector
+  m_endingIndicies[animation].x = sheetSize.x;
+  m_endingIndicies[animation].y = sheetSize.y;
+
   // Our update rate (frequency)
   m_frequencies[animation] = frequency;
   // We don't need to initialize the times udpated because its default is 0
@@ -123,6 +127,7 @@ void AnimationManager::deleteAnimation(string animation) {
   m_spriteSizes.erase(animation);
   m_frequencies.erase(animation);
   m_timesUpdated.erase(animation);
+  m_endingIndicies.erase(animation);
   // Ez pz
 }
 
@@ -158,4 +163,14 @@ void AnimationManager::setAnimationTexture(string animation, Texture texture) {
 void AnimationManager::resetAnimationIndex(string animation) {
   m_indicies[animation].x = m_startingIndicies[animation].x;
   m_indicies[animation].y = m_startingIndicies[animation].y;
+}
+
+void AnimationManager::setAnimationStartingIndex(string animation, Vector2i index) {
+  m_startingIndicies[animation].x = index.x;
+  m_startingIndicies[animation].y = index.y;
+}
+
+void AnimationManager::setAnimationEndingIndex(string animation, Vector2i index) {
+  m_endingIndicies[animation].x = index.x;
+  m_endingIndicies[animation].y = index.y;
 }

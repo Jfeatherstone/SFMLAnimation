@@ -80,8 +80,10 @@ private:
   /*
   Since some spritesheets will contain multiple sets of animations, we want to
   define a start index for all of our entries (though it may just be (0,0) for most)
+  We also define where they end (which will usually just be the size of the sheet)
   */
   map<string, Vector2i> m_startingIndicies;
+  map<string, Vector2i> m_endingIndicies;
 
   // The former will be for the number of frames in a sheet, while the latter
   // is the actual size of each frame in the sheets
@@ -131,6 +133,9 @@ public:
   void setAnimationSheetSize(string animation, Vector2i size);
   void setAnimationIndex(string animation, Vector2i index);
   void setAnimationTexture(string animation, Texture texture);
+  void setAnimationStartingIndex(string animation, Vector2i index);
+  void setAnimationEndingIndex(string animation, Vector2i index);
+
 
   void resetAnimationIndex(string animation);
 };
