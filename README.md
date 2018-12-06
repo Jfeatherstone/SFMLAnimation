@@ -77,3 +77,7 @@ void addAnimation(string animation, Texture texture, Vector2i sheetSize,
    Vector2i spriteSize, Vector2i index = Vector2i(0, 0), int frequency = 0,
    Vector2i startingIndex = Vector2i(0, 0));
 ```
+
+# Other SFML Utilities
+
+[TextureMan](https://github.com/Jfeatherstone/TextureMan)
