@@ -1,12 +1,15 @@
 #include "AnimationManager.hpp"
 
-/*
-This default constructor isn't entirely necessary, but at least for now, here
-it is
-*/
-AnimationManager::AnimationManager() {
+// Map definitions
+map<string, Texture> AnimationManager::m_textures;
+map<string, Vector2i> AnimationManager::m_indicies;
+map<string, Vector2i> AnimationManager::m_startingIndicies;
+map<string, Vector2i> AnimationManager::m_endingIndicies;
+map<string, Vector2i> AnimationManager::m_sheetSizes;
+map<string, Vector2i> AnimationManager::m_spriteSizes;
+map<string, int> AnimationManager::m_frequencies;
+map<string, int> AnimationManager::m_timesUpdated;
 
-}
 
 /*
 update(string animation, Sprite& sprite)
